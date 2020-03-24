@@ -9,6 +9,6 @@ python main.py
 ```
 打开 https://127.0.0.1:4586 即可使用
 ### Android
-* 安装Termux 下载链接 https://gitee.com/gaowanliang/googleTranslatorKusaMaker/raw/master/com.termux_92.apk
+* 安装Termux 下载链接 https://www.lanzous.com/ial9hbi
 * 打开Termux，执行`bash <(curl -s -L gwl.wtf/k)`即可
 * 不要关闭Termux，放在后台，使用任意浏览器打开 https://127.0.0.1:4586 即可使用
