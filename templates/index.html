@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="https://s1.ax1x.com/2020/03/23/8TCo2n.png" type="image/x-icon" />
+    <title>Google生草机——将内容翻译20次</title>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+    <link href="//cdn.jsdelivr.net/gh/gaowanliang/gitment-store/font.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158371937-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-158371937-3');
+    </script>
+</head>
+<style>
+    body {
+        font-family: 'Raleway', sans-serif;
+        font-family: 'Noto Sans SC', sans-serif;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    .copyright {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        color: #999;
+        font-size: 14px;
+    }
+
+    .copyright a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .grecaptcha-badge {
+        visibility: hidden !important;
+    }
+
+    .loader {
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+        background: rgba(0, 0, 0, 0.8);
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 99999;
+        display: none;
+    }
+
+    .loader-inner {
+        bottom: 0;
+        height: 60px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+    }
+
+    .loader-line-wrap {
+        animation: spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+        box-sizing: border-box;
+        height: 50px;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transform-origin: 50% 100%;
+        width: 100px;
+    }
+
+    .loader-line {
+        border: 4px solid transparent;
+        border-radius: 100%;
+        box-sizing: border-box;
+        height: 100px;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+    }
+
+    .loader-line-wrap:nth-child(1) {
+        animation-delay: -50ms;
+    }
+
+    .loader-line-wrap:nth-child(2) {
+        animation-delay: -100ms;
+    }
+
+    .loader-line-wrap:nth-child(3) {
+        animation-delay: -150ms;
+    }
+
+    .loader-line-wrap:nth-child(4) {
+        animation-delay: -200ms;
+    }
+
+    .loader-line-wrap:nth-child(5) {
+        animation-delay: -250ms;
+    }
+
+    .loader-line-wrap:nth-child(1) .loader-line {
+        border-color: hsl(0, 80%, 60%);
+        height: 90px;
+        width: 90px;
+        top: 7px;
+    }
+
+    .loader-line-wrap:nth-child(2) .loader-line {
+        border-color: hsl(60, 80%, 60%);
+        height: 76px;
+        width: 76px;
+        top: 14px;
+    }
+
+    .loader-line-wrap:nth-child(3) .loader-line {
+        border-color: hsl(120, 80%, 60%);
+        height: 62px;
+        width: 62px;
+        top: 21px;
+    }
+
+    .loader-line-wrap:nth-child(4) .loader-line {
+        border-color: hsl(180, 80%, 60%);
+        height: 48px;
+        width: 48px;
+        top: 28px;
+    }
+
+    .loader-line-wrap:nth-child(5) .loader-line {
+        border-color: hsl(240, 80%, 60%);
+        height: 34px;
+        width: 34px;
+        top: 35px;
+    }
+
+    @keyframes spin {
+
+        0%,
+        15% {
+            transform: rotate(0);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<body class="mdui-theme-primary-brown">
+    <div id='loading' class="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mdui-appbar">
+        <div class="mdui-toolbar mdui-color-theme">
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons"><img
+                        src="https://s1.ax1x.com/2020/03/23/8TCo2n.png" height="24" /></i></a>
+            <a href="javascript:;" class="mdui-typo-headline">Google生草机</a>
+            <a href="javascript:;" class="mdui-typo-title mdui-hidden-xs-down">将内容翻译20次</a>
+            <div class="mdui-toolbar-spacer"></div>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
+        </div>
+    </div>
+    <div class="mdui-container ">
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">待翻译文本</label>
+            <textarea id="nr" class="mdui-textfield-input" maxlength="1000"></textarea>
+        </div>
+        <div>
+            <div class="mdui-valign">
+                <p class=" mdui-text-center mdui-center" style="width: 6em;">
+                    翻译次数
+                </p>
+                <label class="mdui-slider mdui-slider-discrete ">
+                    <input id="count" type="range" step="1" min="1" max="50" value="20" />
+                </label>
+            </div>
+            <label class="mdui-radio">
+                <input id="low" type="radio" name="group1" checked />
+                <i class="mdui-radio-icon"></i>
+                低强度生草
+            </label>
+            <label class="mdui-radio">
+                <input type="radio" name="group1" />
+                <i class="mdui-radio-icon"></i>
+                高强度生草
+            </label>
+        </div>
+        <div>
+            <button id="kusa" style="visibility: hidden;"
+                class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme mdui-float-right">立刻生草</button>
+        </div>
+
+    </div>
+    <div class="mdui-container">
+        <div class="mdui-typo mdui-typo-body-1-opacity">
+            <p>注意①:翻译<mark>次数越多，加载越慢</mark>,<mark>高强度生草比低强度慢</mark></p>
+            <p>注意②:低强度生草在翻译n次中会随机翻译成英俄法西日韩中文，高强度生草在翻译n次中会随机翻译成谷歌翻译支持的108种语言的任意一种</p>
+            <p>注意③:如果输入的待翻译文本是中文，如果选择翻译一次，会翻译成英文再翻译回中文。如果输入的是其他语言，选择翻译一次，会直接翻译成中文。无论如何选择，默认都会返回中文</p>
+        </div>
+    </div>
+    <div class="mdui-container">
+        <div class="mdui-textfield">
+            <label class="mdui-textfield-label">翻译后文本</label>
+            <textarea id="res" class="mdui-textfield-input"></textarea>
+        </div>
+        <div class="mdui-panel" mdui-panel>
+            <div class="mdui-panel-item">
+                <div class="mdui-panel-item-header">
+                    <div class="mdui-panel-item-header">翻译过程</div>
+                    <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+                </div>
+                <div class="mdui-panel-item-body" id="process">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <footer class="mdui-center mdui-text-center">
+        <p class="mdui-typo-caption-opacity"><span id="busuanzi_container_site_pv">本站总访问量<span
+                    id="busuanzi_value_site_pv"></span>次</span></p>
+        <p class="mdui-typo-caption-opacity">&copy; <a href="https://gwliang.com" target="_blank">高玩梁</a>
+            <span>2020</span> 本页面由<a href="https://translate.google.cn/" target="_blank">谷歌翻译</a>强力驱动</p>
+    </footer>
+    <script src="https://www.recaptcha.net/recaptcha/api.js?render=6Le_g9gUAAAAACLHju1MXK-wU55vJY-kHSGI3ctx"></script>
+    <script>
+        //验证reCAPTCHA是否载入
+        grecaptcha.ready(function () {
+            console.log("reCAPTCHA载入成功")
+            $("#kusa").removeAttr("style", "");
+        });
+        console.log()
+        $("#kusa").click(function () {
+            document.getElementById("loading").style.display = "block";
+            $.ajax({
+                type: "POST",
+                url: '/translate',
+                data: {
+                    count: $("#count").val(),
+                    text: $("#nr").val(),
+                    low: $("#low").is(':checked')
+                },
+                success: function (data) {
+                    if (!data.state) {
+                        document.getElementById("loading").style.display = "none";
+                        console.log(data)
+                        $("#res").val(data.res)
+                        var a = ''
+                        for (var i = 0; i < data.process.length; i++) {
+                            var c = i + 1
+                            a += "<p>第 " + c + " 次:" + data.process[i] + "</p>"
+                        }
+                        $("#process").html(a)
+                    } else {
+                        mdui.snackbar({
+                            message: '返回失败，请重试'
+                        });
+                    }
+                },
+                error: function () {
+                    document.getElementById("loading").style.display = "none";
+                    mdui.snackbar({
+                        message: '返回失败，请重试'
+                    });
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
