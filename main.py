@@ -60,4 +60,5 @@ def translate():
 
 
 if __name__ == '__main__':
-    app.run(port=4586, debug=True)      # 设置debug=True是为了让代码修改实时生效，而不用每次重启加载
+    # 设置debug=True是为了让代码修改实时生效，而不用每次重启加载
+    app.run(host="0.0.0.0", port=4586, debug=True)
