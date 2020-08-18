@@ -265,14 +265,8 @@
         <p class="mdui-typo-caption-opacity">&copy; <a href="https://gwliang.com" target="_blank">高玩梁</a>
             <span>2020</span> 本页面由<a href="https://translate.google.cn/" target="_blank">谷歌翻译</a>强力驱动</p>
     </footer>
-    <script src="https://www.recaptcha.net/recaptcha/api.js?render=6Le_g9gUAAAAACLHju1MXK-wU55vJY-kHSGI3ctx"></script>
     <script>
-        //验证reCAPTCHA是否载入
-        grecaptcha.ready(function () {
-            console.log("reCAPTCHA载入成功")
-            $("#kusa").removeAttr("style", "");
-        });
-        console.log()
+        $("#kusa").removeAttr("style", "");
         $("#kusa").click(function () {
             document.getElementById("loading").style.display = "block";
             $.ajax({
